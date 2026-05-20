@@ -85,6 +85,7 @@ export default function CreateRequest() {
           >
             <option value="">Seleccionar área</option>
             {areas.map((a) => <option key={a.id} value={a.id}>{a.name}</option>)}
+           
           </select>
         </div>
 
