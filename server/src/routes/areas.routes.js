@@ -1,7 +1,11 @@
-const router = require('express').Router()
-const { getAll, getById, create, update, remove } = require('../controllers/areas.controller')
+const { isAuthenticated } = require('../middleware/auth')
 
-router.get('/', getAll)
+const router = require('express').Router()
+const { getAll, getById, create, update, remove } = require('../controllers/requests.controller')
+
+
+router.get('/', isAuthenticated, getAll)
+//router.get('/', getAll)
 router.get('/:id', getById)
 router.post('/', create)
 router.put('/:id', update)
